@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "/workspaces/14912-Java-Teste-2/lib/mysql-connector-j-9.6.0.jar"
+    ]
+}

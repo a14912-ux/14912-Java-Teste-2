@@ -8,6 +8,10 @@ public class Cliente {
 
     public String telefone;
 
+    
+
+
+
 
     public Cliente(int id, String nome, String email, String telefone) {
 
@@ -18,6 +22,8 @@ public class Cliente {
         this.email = email;
 
         this.telefone = telefone;
+
+        
 
     }
 
