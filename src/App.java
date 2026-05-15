@@ -15,7 +15,7 @@ public class App {
         );
 
 
-/*
+
         /// HOME
         server.createContext("/", exchange -> {
             String html = """
@@ -162,7 +162,9 @@ public class App {
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Telefone</th>
+                            <th>País</th>
                             <th>Ações</th>
+
                         </tr>
                 """);             
 
@@ -257,6 +259,9 @@ public class App {
                     Telefone:
                     <input name='telefone'>
 
+                    País:
+                    <input name='país' type='país' required>
+
                     <button type='submit'>Guardar</button>
                 </form>
 
@@ -317,14 +322,14 @@ public class App {
                     throw new Exception("Ligação à BD falhou!");
                 }
 
-                String sql = "INSERT INTO clientes(nome,nif,email,telefone) VALUES (?,?,?,?)";
+                String sql = "INSERT INTO clientes(nome,nif,email,telefone,país) VALUES (?,?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
 
                 ps.setString(1, nome);
                 ps.setString(2, nif);
                 ps.setString(3, email);
                 ps.setString(4, telefone);
-                ps.setString(4, país);
+                ps.setString(5, país);
 
                 ps.executeUpdate();
 
@@ -516,7 +521,7 @@ public class App {
                     throw new Exception("Ligação à BD falhou!");
                 }
 
-                String sql = "UPDATE clientes SET nome=?, email=?, telefone=? WHERE id=?";
+                String sql = "UPDATE clientes SET nome=?, email=?, telefone=?,país=? WHERE id=? ";
                 PreparedStatement ps = con.prepareStatement(sql);
 
                 ps.setString(1, nome);
@@ -689,7 +694,7 @@ public class App {
                 ResultSet rs = st.executeQuery("SELECT * FROM animais");
 
                 while (rs.next()) {
-                    int numeroCA = rs.getInt("numeroCA");
+                    float numeroCA = rs.getInt("numeroCA");
                     String nomeAnimal = rs.getString("nomeAnimal");
                     String dataNascimento = rs.getString("dataNascimento");
 
@@ -1133,7 +1138,7 @@ public class App {
         });
         
       
-   */     
+        
 
 
 
